@@ -254,8 +254,8 @@ let rec prods (lst : (int * int) list) : int list =
   | [] -> []
   | (x, y) :: tail -> (x * y) :: (prods tail) ;;
 
-let dotprod (a : int list) (b : int list) : int =
-  failwith "dotprod not implemented" ;;
+let rec dotprod (a : int list) (b : int list) : int =
+  sum (prods (zip a b));;
 
 (*======================================================================
 Part 4: High-order functional programming with map, filter, and fold
