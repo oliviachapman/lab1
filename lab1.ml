@@ -99,7 +99,7 @@ appropriate OCaml expression to assign the value to the variable
 exercise1 below.
 ......................................................................*)
 
-let exercise3 () = failwith "exercise3 not implemented" ;;
+let exercise3 () = 3 - 5 ;;
 
 (* Hint: The OCaml concrete expression
 
@@ -111,6 +111,15 @@ does *not* correspond to the abstract syntax above.
 Exercise 4: Draw the tree that the concrete syntax "- 5 - 3" does
 correspond to. Check it with a member of the course staff if you'd
 like.
+
+      +
+      |
+      ^
+     / \
+    -   -
+    |   \
+   5     3
+
 ......................................................................*)
 
    
