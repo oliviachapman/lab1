@@ -1,3 +1,4 @@
+open List ;;
 (* 
 			      CS51 Lab 1
 		     Basic Functional Programming
@@ -313,14 +314,14 @@ Exercise 11: Reimplement sum using fold_left, naming it sum_ho (for
 ......................................................................*)
 
 let sum_ho (lst : int list) : int =
-  failwith "sum_ho not implemented" ;;
+  fold_left (+) 0 lst ;;
 
 (*......................................................................
 Exercise 12: Reimplement prods using map.
 ......................................................................*)
 
 let prods_ho (lst : (int * int) list) : int list =
-  failwith "prods_ho not implemented" ;;
+  map lst;;
   
 (*......................................................................
 Exercise 13: The OCaml List module provides, in addition to the map,
