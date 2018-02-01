@@ -219,8 +219,12 @@ length lists, to just pad the shorter list with, say, false values, so
 that, zip [1] [2; 3; 4] = [(1, 2); (false, 3); (false, 4)]?
 ......................................................................*)
 
-let zip (x : int list) (y : int list) : (int * int) list =
-  failwith "zip not implemented" ;;
+let rec zip (x : int list) (y : int list) : (int * int) list =
+   match x, y with
+   | [], [] -> []
+   | [], hd :: tl -> raise (Invalid_argument "mismatch lists")
+   | hd :: tl, [] -> raise (Invalid_argument "mismatch lists")
+   | hda :: tla, hdb :: tlb -> (hda, hdb) :: zip tla tlb;;
 
 (*.....................................................................
 Exercise 10: Recall the definition of the function prods from lecture
